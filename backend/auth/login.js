@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken")
 router.post("/", async (req, res) =>{
     try {
         const user = await User.findOne({name:req.body.name});
-        console.log(user)
         !user && res.status(401).json("NAME_INCORRECTO")
 
         const hash = CryptoJS.AES.decrypt(user.password, "palabrasecreta");
