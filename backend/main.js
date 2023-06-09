@@ -1,6 +1,5 @@
 const express = require('express')
 const http = require('http')
-const jwt = require("jsonwebtoken")
 const mongoose = require('mongoose')
 var compression = require('compression')
 const registerUser = require("./auth/register")
