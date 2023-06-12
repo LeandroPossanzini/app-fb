@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(compression());
 app.use('/',registerUser)
 app.use("/", login)
-app.use('/api', userRoutes)
+app.use('/users', userRoutes)
 //routes
 app.get("/", (req,res) =>{
     res.send("welcome to my api")
@@ -23,7 +23,7 @@ app.get("/", (req,res) =>{
 
 //mongoDB conection
 mongoose.connect(process.env.MONGODB_URI)
-    .then( () => console.log("conectado a la base de datos"))
+    .then( () => console.log("*****Base de datos conectada*****"))
     .catch((error) => console.log(error))
 
 //server
